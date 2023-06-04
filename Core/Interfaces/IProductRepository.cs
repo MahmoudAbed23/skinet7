@@ -5,8 +5,8 @@ namespace Core.Interfaces
     public interface IProductRepository
     {
         Task<Product> GetProductByIdAsync(int Id);
-        Task<List<Product>> GetProductsAsync();
-        Task<List<ProductType>> GetProductTypesAsync();
-        Task<List<ProductBrand>> GetProductBrandsAsync();
+        Task<IReadOnlyList<Product>> GetProductsAsync();
+        Task<IReadOnlyList<ProductType>> GetProductTypesAsync();
+        Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();
     }
 }
