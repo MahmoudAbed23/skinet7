@@ -17,7 +17,6 @@ namespace API.Extensions
             {
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
-            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<ApiBehaviorOptions>(options =>
@@ -31,7 +30,7 @@ namespace API.Extensions
 
                     var errorResponse = new ApiValidationErrorResponse
                     {
-                        Errors = errors
+                        Errors = errors 
                     };
 
                     return new BadRequestObjectResult(errorResponse);
